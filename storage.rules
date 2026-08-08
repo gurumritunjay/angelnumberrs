@@ -1,0 +1,11 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Default deny -- open specific paths as Phase 2/3 features (avatars,
+    // report PDFs, etc.) land.
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

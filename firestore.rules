@@ -1,0 +1,12 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default deny -- Phase 1 ships with static content only, nothing reads
+    // from or writes to Firestore yet. Open specific collections here as
+    // Phase 2 (auth, bookings, saved readings) lands.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

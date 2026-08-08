@@ -1,0 +1,250 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/playfair-display";
+@import "@fontsource-variable/manrope";
+@import "@fontsource/cinzel/400.css";
+@import "@fontsource/cinzel/600.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: "Playfair Display Variable", ui-serif, Georgia, serif;
+  --font-sans: "Manrope Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-accent: "Cinzel", ui-serif, serif;
+
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+
+  /* Brand palette, exposed as Tailwind utilities: bg-gold, text-mystic-purple, etc. */
+  --color-midnight: var(--midnight);
+  --color-midnight-deep: var(--midnight-deep);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dim: var(--gold-dim);
+  --color-mystic-purple: var(--mystic-purple);
+  --color-mystic-purple-deep: var(--mystic-purple-deep);
+  --color-ethereal: var(--ethereal);
+
+  --radius-sm: calc(var(--radius) * 0.55);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.35);
+  --radius-2xl: calc(var(--radius) * 1.7);
+  --radius-3xl: calc(var(--radius) * 2.2);
+}
+
+:root {
+  --radius: 1rem;
+
+  /* Core brand tokens */
+  --midnight: #0a0a12;
+  --midnight-deep: #050408;
+  --gold: #c9a84c;
+  --gold-light: #e8cd82;
+  --gold-dim: #8a7434;
+  --mystic-purple: #7b5ea7;
+  --mystic-purple-deep: #4a3868;
+  --ethereal: #f0eef6;
+
+  --background: var(--midnight);
+  --foreground: var(--ethereal);
+  --card: color-mix(in oklab, white 4%, transparent);
+  --card-foreground: var(--ethereal);
+  --popover: #15121f;
+  --popover-foreground: var(--ethereal);
+  --primary: var(--gold);
+  --primary-foreground: #17130a;
+  --secondary: var(--mystic-purple);
+  --secondary-foreground: var(--ethereal);
+  --muted: #1a1626;
+  --muted-foreground: #a79fc0;
+  --accent: var(--mystic-purple);
+  --accent-foreground: var(--ethereal);
+  --destructive: #e2536b;
+  --border: color-mix(in oklab, white 10%, transparent);
+  --input: color-mix(in oklab, white 10%, transparent);
+  --ring: var(--gold);
+
+  --sidebar: #100d19;
+  --sidebar-foreground: var(--ethereal);
+  --sidebar-primary: var(--gold);
+  --sidebar-primary-foreground: #17130a;
+  --sidebar-accent: var(--mystic-purple);
+  --sidebar-accent-foreground: var(--ethereal);
+  --sidebar-border: color-mix(in oklab, white 10%, transparent);
+  --sidebar-ring: var(--gold);
+}
+
+/* This is a single, permanently-dark mystical theme -- .dark mirrors :root */
+.dark {
+  --background: var(--midnight);
+  --foreground: var(--ethereal);
+  --card: color-mix(in oklab, white 4%, transparent);
+  --card-foreground: var(--ethereal);
+  --popover: #15121f;
+  --popover-foreground: var(--ethereal);
+  --primary: var(--gold);
+  --primary-foreground: #17130a;
+  --secondary: var(--mystic-purple);
+  --secondary-foreground: var(--ethereal);
+  --muted: #1a1626;
+  --muted-foreground: #a79fc0;
+  --accent: var(--mystic-purple);
+  --accent-foreground: var(--ethereal);
+  --destructive: #e2536b;
+  --border: color-mix(in oklab, white 10%, transparent);
+  --input: color-mix(in oklab, white 10%, transparent);
+  --ring: var(--gold);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply font-sans scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -10%, color-mix(in oklab, var(--mystic-purple) 28%, transparent), transparent),
+      radial-gradient(ellipse 60% 40% at 90% 10%, color-mix(in oklab, var(--gold) 10%, transparent), transparent);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--gold) 40%, transparent);
+    color: var(--ethereal);
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--midnight-deep);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--mystic-purple-deep);
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--gold-dim);
+  }
+}
+
+@layer utilities {
+  /* Glassmorphism surface used across cards, nav, and panels */
+  .glass {
+    background: color-mix(in oklab, white 4%, transparent);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid color-mix(in oklab, white 10%, transparent);
+  }
+
+  .glass-hover {
+    transition: border-color 300ms ease, box-shadow 300ms ease, transform 300ms ease, background 300ms ease;
+  }
+  .glass-hover:hover {
+    border-color: color-mix(in oklab, var(--gold) 45%, transparent);
+    box-shadow: 0 0 0 1px color-mix(in oklab, var(--gold) 20%, transparent), 0 20px 60px -20px color-mix(in oklab, var(--mystic-purple) 60%, transparent);
+    transform: translateY(-3px);
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(115deg, var(--gold-light) 10%, var(--gold) 50%, var(--gold-dim) 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .text-gradient-mystic {
+    background: linear-gradient(115deg, var(--ethereal) 0%, var(--mystic-purple) 60%, var(--gold) 120%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 40px -8px color-mix(in oklab, var(--gold) 55%, transparent);
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 60px -10px color-mix(in oklab, var(--mystic-purple) 70%, transparent);
+  }
+
+  .border-glow {
+    border: 1px solid color-mix(in oklab, var(--gold) 30%, transparent);
+  }
+
+  /* Subtle film-grain texture overlay for atmosphere */
+  .bg-grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .font-numeral {
+    font-family: var(--font-accent);
+    font-variant-numeric: lining-nums;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  .animate-twinkle {
+    animation: twinkle 3.5s ease-in-out infinite;
+  }
+  .animate-drift {
+    animation: drift 60s linear infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-14px); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.25; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+@keyframes drift {
+  from { transform: translate(0, 0); }
+  to { transform: translate(-200px, -120px); }
+}
