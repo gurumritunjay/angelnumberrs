@@ -3,6 +3,7 @@ import { Sparkles, Heart, Award, Users } from "lucide-react"
 import { PageHero } from "@/components/shared/PageHero"
 import { CTABanner } from "@/components/shared/CTABanner"
 import { team, values } from "@/data/team"
+import sudhaProfile from "@/assets/images/sudha profile image_edited.avif"
 
 export default function About() {
   return (
@@ -25,17 +26,10 @@ export default function About() {
           <div className="flex flex-col sm:flex-row items-center gap-6 mb-6">
             <div className="clay shrink-0">
               <img 
-                src="/images/profile/sudha-profile.jpg" 
+                src={sudhaProfile}
                 alt="Sudha Goswami - Numerologist"
-                className="w-32 h-32 object-cover rounded-2xl"
-                onError={(e) => {
-                  e.target.style.display = 'none'
-                  e.target.nextElementSibling.style.display = 'flex'
-                }}
+                className="w-32 h-32 sm:w-40 sm:h-40 object-cover rounded-2xl"
               />
-              <div className="hidden w-32 h-32 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-400 to-blue-600">
-                <Sparkles className="h-12 w-12 text-white" strokeWidth={2} />
-              </div>
             </div>
             <div className="flex-1">
               <div className="flex items-start gap-4">
