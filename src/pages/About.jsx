@@ -9,8 +9,8 @@ export default function About() {
     <>
       <PageHero
         eyebrow="About Sudha Goswami"
-        title="Guidance Rooted in Practice, Not Guesswork"
-        description="Welcome to AngelNumberrs — a space where numerology meets clarity, and cosmic wisdom guides you toward your true potential. With over 10 years of experience, I've helped thousands discover their unique life path through the power of numbers."
+        title="Know Me More..."
+        description="Welcome to AngelNumberrs — your path to clarity and purpose through the power of numerology. With 10+ years of experience, I help individuals discover their life's unique blueprint and transform challenges into strengths. Let's unlock the messages your numbers carry and guide your next steps with confidence."
       />
 
       <section className="mx-auto max-w-4xl px-4 pb-24 sm:px-6">
@@ -21,13 +21,32 @@ export default function About() {
           transition={{ duration: 0.5 }}
           className="clay clay-hover p-8 sm:p-12 bg-gradient-to-br from-blue-50 to-white"
         >
-          <div className="flex items-start gap-4 mb-6">
-            <div className="clay p-3 bg-white">
-              <Sparkles className="h-6 w-6 text-blue-600" strokeWidth={2} />
+          {/* Profile Image Section */}
+          <div className="flex flex-col sm:flex-row items-center gap-6 mb-6">
+            <div className="clay shrink-0">
+              <img 
+                src="/images/profile/sudha-profile.jpg" 
+                alt="Sudha Goswami - Numerologist"
+                className="w-32 h-32 object-cover rounded-2xl"
+                onError={(e) => {
+                  e.target.style.display = 'none'
+                  e.target.nextElementSibling.style.display = 'flex'
+                }}
+              />
+              <div className="hidden w-32 h-32 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-400 to-blue-600">
+                <Sparkles className="h-12 w-12 text-white" strokeWidth={2} />
+              </div>
             </div>
-            <div>
-              <h2 className="font-display text-2xl sm:text-3xl text-blue-600 font-bold">My Mission</h2>
-              <p className="text-sm text-gray-500 mt-1">Empowering lives through numerology</p>
+            <div className="flex-1">
+              <div className="flex items-start gap-4">
+                <div className="clay p-3 bg-white">
+                  <Sparkles className="h-6 w-6 text-blue-600" strokeWidth={2} />
+                </div>
+                <div>
+                  <h2 className="font-display text-2xl sm:text-3xl text-blue-600 font-bold">My Mission</h2>
+                  <p className="text-sm text-gray-500 mt-1">Empowering lives through numerology</p>
+                </div>
+              </div>
             </div>
           </div>
           <p className="text-base leading-relaxed text-gray-700">

@@ -54,7 +54,7 @@ export default function Contact() {
       <PageHero
         eyebrow="Get in Touch"
         title="Questions, Bookings & Everything Between"
-        description="Reach out about a reading, a partnership, or anything else -- we read every message."
+        description="Reach out for a personalized numerology consultation. Contact Sudha Goswami directly for guidance on your life path."
       />
 
       <section className="relative mx-auto grid max-w-6xl gap-8 px-4 pb-24 sm:px-6 lg:grid-cols-[1fr_1.4fr] lg:px-8">
@@ -66,9 +66,9 @@ export default function Contact() {
           className="space-y-4"
         >
           {[
-            { icon: Mail, title: "Email", value: "hello@angelnumberrs.com" },
-            { icon: MapPin, title: "Studio", value: "Remote-first, worldwide readings" },
-            { icon: Clock, title: "Response Time", value: "Within 1-2 business days" },
+            { icon: Mail, title: "Email", value: "sudha@angelnumberrs.com" },
+            { icon: MapPin, title: "Location", value: "Bangalore, India" },
+            { icon: Clock, title: "Phone", value: "+91 9148342906" },
           ].map((item) => (
             <div key={item.title} className="clay clay-hover flex items-start gap-4 p-5 bg-white">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center clay bg-gradient-to-br from-blue-400 to-blue-600">

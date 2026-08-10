@@ -1,8 +1,8 @@
 import { HeroSection } from "@/components/home/HeroSection"
 import { IntroSection } from "@/components/home/IntroSection"
+import { ServicesSection } from "@/components/home/ServicesSection"
 import { FeaturedNumbers } from "@/components/home/FeaturedNumbers"
 import { NewsletterSection } from "@/components/home/NewsletterSection"
-import { DailyWidget } from "@/components/shared/DailyWidget"
 import { TestimonialCarousel } from "@/components/shared/TestimonialCarousel"
 import { CTABanner } from "@/components/shared/CTABanner"
 
@@ -10,11 +10,14 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <IntroSection />
+      
+      <div id="about">
+        <IntroSection />
+      </div>
 
-      <section className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <DailyWidget />
-      </section>
+      <div id="services">
+        <ServicesSection />
+      </div>
 
       <FeaturedNumbers />
 
@@ -23,7 +26,11 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 pb-4 sm:px-6 lg:px-8">
-        <CTABanner />
+        <CTABanner 
+          title="Ready to Discover Your Life's Path?"
+          description="Book a personalized numerology consultation with Sudha Goswami and unlock the power of numbers in your life."
+          ctaLabel="Book Your Reading Now"
+        />
       </section>
 
       <NewsletterSection />

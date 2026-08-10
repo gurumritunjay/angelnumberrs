@@ -35,6 +35,12 @@ export function Footer() {
               Decode the signs the universe keeps sending you. Angel numbers,
               numerology, and astrology guidance for a more intentional life.
             </p>
+            <div className="mt-4 space-y-2 text-sm text-gray-600">
+              <p className="font-semibold">Contact:</p>
+              <p>📍 Bangalore, India</p>
+              <p>📞 +91 9148342906</p>
+              <p>✉️ sudha@angelnumberrs.com</p>
+            </div>
             <div className="mt-6 flex gap-3">
               {SOCIALS.map(({ icon: Icon, href, label }) => (
                 <a

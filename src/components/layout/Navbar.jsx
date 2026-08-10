@@ -14,10 +14,10 @@ import { Logo } from "@/components/layout/Logo"
 import { cn } from "@/lib/utils"
 
 const NAV_LINKS = [
-  { to: "/angel-numbers", label: "Angel Numbers" },
-  { to: "/numerology", label: "Numerology" },
-  { to: "/horoscope", label: "Horoscope" },
+  { to: "/", label: "Home" },
   { to: "/about", label: "About" },
+  { to: "/services", label: "Services" },
+  { to: "/angel-numbers", label: "Angel Numbers" },
   { to: "/contact", label: "Contact" },
 ]
 

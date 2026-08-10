@@ -30,19 +30,26 @@ export function IntroSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="mx-auto max-w-2xl text-center"
+        className="mx-auto max-w-3xl text-center"
       >
         <div className="inline-flex clay px-4 py-2 mb-4">
-          <p className="text-sm font-semibold text-blue-600 uppercase tracking-wider">The Basics</p>
+          <p className="text-sm font-semibold text-blue-600 uppercase tracking-wider">About Numerology</p>
         </div>
         <h2 className="font-display text-3xl sm:text-4xl text-blue-600 font-bold">
-          What are Angel Numbers?
+          The Science of Numbers
         </h2>
-        <p className="mt-4 text-base leading-relaxed text-gray-600 sm:text-lg">
-          Angel numbers are a spiritual practice rooted in numerology -- the
-          belief that repeating numbers carry symbolic messages from your
-          higher self, guides, or the universe, drawing attention to a theme
-          worth exploring in your life right now.
+        <p className="mt-6 text-base leading-relaxed text-gray-700 sm:text-lg text-left">
+          Numerology is an extremely interesting science of numbers in relation with English alphabets, involving simple mathematics. 
+          It's about the personalities of each number, and how each number's characteristics alter life. Every alphabet is assigned 
+          a number value. Each number has its own vibration and certain power.
+        </p>
+        <p className="mt-4 text-base leading-relaxed text-gray-700 sm:text-lg text-left">
+          The date of birth and name of a person reveals complete uniqueness and destiny of the person. There are supernatural powers 
+          that continuously play their role in the lives of human beings. One can notice that some numbers are associated with fortunate 
+          events while some numbers continuously play unfortunate roles in our lives.
+        </p>
+        <p className="mt-4 text-base leading-relaxed text-gray-700 sm:text-lg text-left">
+          The study and application of numerology gives you simple remedies for your overall growth and success.
         </p>
       </motion.div>
 

@@ -1,5 +1,4 @@
 import { motion } from "framer-motion"
-import { Link } from "react-router-dom"
 import { Sparkles, ArrowRight, Star } from "lucide-react"
 import { SearchBar } from "@/components/shared/SearchBar"
 import { Button } from "@/components/ui/button"
@@ -35,6 +34,16 @@ export function HeroSection() {
         />
       </div>
 
+      {/* Optional: Numbered Stones Background Image */}
+      <div className="absolute inset-0 opacity-5">
+        <img 
+          src="/images/hero/numbered-stones.jpg" 
+          alt="" 
+          className="w-full h-full object-cover"
+          onError={(e) => { e.target.style.display = 'none' }}
+        />
+      </div>
+
       <div className="relative mx-auto max-w-5xl flex flex-col items-center px-4 sm:px-6 text-center">
         <motion.div
           variants={container}
@@ -47,7 +56,7 @@ export function HeroSection() {
             className="clay inline-flex items-center gap-2 mb-6 px-5 py-2.5 text-sm font-medium text-blue-600"
           >
             <Star className="h-4 w-4 text-green-500 animate-pulse-soft" fill="currentColor" />
-            Angel Numbers · Numerology · Astrology
+            ANGEL NUMBERRS · GUIDING LIVES
           </motion.span>
 
           <motion.h1
@@ -78,10 +87,10 @@ export function HeroSection() {
               size="lg"
               className="clay-button text-white font-semibold px-6 hover:scale-105 transition-transform"
             >
-              <Link to="/angel-numbers">
-                Discover Your Number
+              <a href="#services">
+                View Our Services
                 <ArrowRight className="h-4 w-4 ml-2" />
-              </Link>
+              </a>
             </Button>
             <Button
               asChild
@@ -89,10 +98,10 @@ export function HeroSection() {
               variant="outline"
               className="clay clay-hover bg-white text-blue-600 border-none font-semibold px-6"
             >
-              <Link to="/numerology">
+              <a href="#about">
                 <Sparkles className="h-4 w-4 mr-2" />
-                Try Free Tools
-              </Link>
+                Learn More
+              </a>
             </Button>
           </motion.div>
 
@@ -110,13 +119,13 @@ export function HeroSection() {
                   />
                 ))}
               </div>
-              <span>10,000+ readings</span>
+              <span>Trusted by thousands</span>
             </div>
             <div className="flex items-center gap-1">
               {[1, 2, 3, 4, 5].map((i) => (
                 <Star key={i} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
               ))}
-              <span className="ml-1">4.9/5 rating</span>
+              <span className="ml-1">10+ Years Experience</span>
             </div>
           </motion.div>
         </motion.div>
