@@ -19,14 +19,16 @@ export function FeaturedNumbers() {
         className="mb-12 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end"
       >
         <div>
-          <p className="text-xs tracking-[0.25em] text-gold/80 uppercase">Explore</p>
-          <h2 className="mt-3 font-display text-3xl text-ethereal sm:text-4xl">
+          <div className="inline-flex clay px-4 py-2 mb-3">
+            <p className="text-sm font-semibold text-blue-600 uppercase tracking-wider">Explore</p>
+          </div>
+          <h2 className="font-display text-3xl sm:text-4xl text-blue-600 font-bold">
             Featured Angel Numbers
           </h2>
         </div>
         <Link
           to="/angel-numbers"
-          className="group flex items-center gap-1.5 text-sm text-ethereal/60 transition-colors hover:text-gold"
+          className="group flex items-center gap-1.5 text-sm text-gray-600 font-semibold transition-colors hover:text-blue-600"
         >
           View full directory
           <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />

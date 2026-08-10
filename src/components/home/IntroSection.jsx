@@ -32,11 +32,13 @@ export function IntroSection() {
         transition={{ duration: 0.5 }}
         className="mx-auto max-w-2xl text-center"
       >
-        <p className="text-xs tracking-[0.25em] text-gold/80 uppercase">The Basics</p>
-        <h2 className="mt-3 font-display text-3xl text-ethereal sm:text-4xl">
+        <div className="inline-flex clay px-4 py-2 mb-4">
+          <p className="text-sm font-semibold text-blue-600 uppercase tracking-wider">The Basics</p>
+        </div>
+        <h2 className="font-display text-3xl sm:text-4xl text-blue-600 font-bold">
           What are Angel Numbers?
         </h2>
-        <p className="mt-4 text-sm leading-relaxed text-ethereal/60 sm:text-base">
+        <p className="mt-4 text-base leading-relaxed text-gray-600 sm:text-lg">
           Angel numbers are a spiritual practice rooted in numerology -- the
           belief that repeating numbers carry symbolic messages from your
           higher self, guides, or the universe, drawing attention to a theme
@@ -52,13 +54,13 @@ export function IntroSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="glass rounded-2xl p-6 text-center"
+            className="clay clay-hover p-6 text-center bg-white"
           >
-            <span className="mx-auto flex h-11 w-11 items-center justify-center rounded-full border border-gold/30 bg-gold/10 text-gold">
-              <point.icon className="h-5 w-5" strokeWidth={1.5} />
-            </span>
-            <h3 className="mt-4 font-display text-lg text-ethereal">{point.title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-ethereal/55">{point.description}</p>
+            <div className="mx-auto flex h-14 w-14 items-center justify-center clay bg-gradient-to-br from-blue-400 to-blue-600">
+              <point.icon className="h-6 w-6 text-white" strokeWidth={2} />
+            </div>
+            <h3 className="mt-4 font-display text-lg text-blue-600 font-bold">{point.title}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-gray-600">{point.description}</p>
           </motion.div>
         ))}
       </div>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { Sparkles } from "lucide-react"
+import { Sparkles, Heart, Award, Users } from "lucide-react"
 import { PageHero } from "@/components/shared/PageHero"
 import { CTABanner } from "@/components/shared/CTABanner"
 import { team, values } from "@/data/team"
@@ -8,9 +8,9 @@ export default function About() {
   return (
     <>
       <PageHero
-        eyebrow="Our Story"
+        eyebrow="About Sudha Goswami"
         title="Guidance Rooted in Practice, Not Guesswork"
-        description="Angel Numberrs started as a single blog post explaining 1111 to a curious friend. It's grown into a full practice built around one belief: ancient number wisdom deserves modern clarity."
+        description="Welcome to AngelNumberrs — a space where numerology meets clarity, and cosmic wisdom guides you toward your true potential. With over 10 years of experience, I've helped thousands discover their unique life path through the power of numbers."
       />
 
       <section className="mx-auto max-w-4xl px-4 pb-24 sm:px-6">
@@ -19,40 +19,65 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="glass rounded-3xl p-8 sm:p-12"
+          className="clay clay-hover p-8 sm:p-12 bg-gradient-to-br from-blue-50 to-white"
         >
-          <Sparkles className="h-6 w-6 text-gold" strokeWidth={1.5} />
-          <h2 className="mt-4 font-display text-2xl text-ethereal sm:text-3xl">Our Mission</h2>
-          <p className="mt-4 text-base leading-relaxed text-ethereal/70">
-            We believe the signs you keep noticing -- a repeating number, a
-            recurring dream, an uncanny coincidence -- are worth taking
-            seriously, not as fortune-telling, but as an invitation to pause
-            and reflect. Our mission is to make that reflection accessible:
-            content deep enough to trust, delivered simply enough to use.
+          <div className="flex items-start gap-4 mb-6">
+            <div className="clay p-3 bg-white">
+              <Sparkles className="h-6 w-6 text-blue-600" strokeWidth={2} />
+            </div>
+            <div>
+              <h2 className="font-display text-2xl sm:text-3xl text-blue-600 font-bold">My Mission</h2>
+              <p className="text-sm text-gray-500 mt-1">Empowering lives through numerology</p>
+            </div>
+          </div>
+          <p className="text-base leading-relaxed text-gray-700">
+            I believe the signs you keep noticing — a repeating number, a recurring dream, 
+            an uncanny coincidence — are worth taking seriously, not as fortune-telling, 
+            but as an invitation to pause and reflect. My mission is to make that reflection 
+            accessible: content deep enough to trust, delivered simply enough to use.
+          </p>
+          <p className="mt-4 text-base leading-relaxed text-gray-700">
+            As a former software tester turned numerologist, I've combined analytical thinking 
+            with spiritual wisdom to help people align their names with their lucky numbers — 
+            all based on the one thing that never changes: your birth date.
           </p>
         </motion.div>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-3">
-          {values.map((v, i) => (
+          {[
+            { icon: Heart, title: "Authenticity", description: "Every reading is personal, warm, and delivered with care", color: "blue" },
+            { icon: Award, title: "Expertise", description: "10+ years helping people transform through numerology", color: "green" },
+            { icon: Users, title: "Community", description: "Join 10,000+ people who've found clarity", color: "blue" }
+          ].map((item, i) => (
             <motion.div
-              key={v.title}
+              key={item.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="glass rounded-2xl p-6"
+              className="clay clay-hover p-6 bg-white text-center"
             >
-              <h3 className="font-display text-lg text-ethereal">{v.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-ethereal/55">{v.description}</p>
+              <div className={`clay inline-flex p-3 mb-4 bg-gradient-to-br ${item.color === 'green' ? 'from-green-400 to-green-600' : 'from-blue-400 to-blue-600'}`}>
+                <item.icon className="h-6 w-6 text-white" strokeWidth={2} />
+              </div>
+              <h3 className="font-display text-lg text-blue-600 font-bold">{item.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-gray-600">{item.description}</p>
             </motion.div>
           ))}
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-4 pb-24 sm:px-6 lg:px-8">
-        <div className="mb-10 text-center">
-          <p className="text-xs tracking-[0.25em] text-gold/80 uppercase">Meet the Team</p>
-          <h2 className="mt-3 font-display text-3xl text-ethereal">Our Astrologers &amp; Numerologists</h2>
+        <div className="mb-12 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex clay px-4 py-2 mb-4"
+          >
+            <p className="text-sm font-semibold text-blue-600 uppercase tracking-wider">Meet the Team</p>
+          </motion.div>
+          <h2 className="font-display text-3xl sm:text-4xl text-blue-600 font-bold">Our Astrologers & Numerologists</h2>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {team.map((member, i) => (
@@ -62,14 +87,14 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="glass glass-hover rounded-2xl p-6 text-center"
+              className="clay clay-hover p-6 text-center bg-white"
             >
-              <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-gold/30 bg-gold/10 font-display text-lg text-gold">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-blue-400 to-blue-600 text-white font-display text-xl font-bold shadow-lg">
                 {member.initials}
-              </span>
-              <h3 className="mt-4 font-display text-lg text-ethereal">{member.name}</h3>
-              <p className="text-xs text-gold/70">{member.role}</p>
-              <p className="mt-3 text-sm leading-relaxed text-ethereal/55">{member.bio}</p>
+              </div>
+              <h3 className="mt-4 font-display text-lg text-blue-600 font-bold">{member.name}</h3>
+              <p className="text-xs text-green-600 font-semibold">{member.role}</p>
+              <p className="mt-3 text-sm leading-relaxed text-gray-600">{member.bio}</p>
             </motion.div>
           ))}
         </div>
@@ -79,7 +104,7 @@ export default function About() {
         <CTABanner
           eyebrow="Work With Us"
           title="Ready to talk to a real person about your reading?"
-          description="Our team offers one-on-one consultations for numerology, astrology, and tarot."
+          description="Our team offers one-on-one consultations for numerology, astrology, and personalized life path guidance."
         />
       </section>
     </>

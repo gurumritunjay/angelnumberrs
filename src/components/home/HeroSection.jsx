@@ -1,7 +1,6 @@
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
-import { Sparkles, ArrowRight, Moon } from "lucide-react"
-import { StarField } from "@/components/shared/StarField"
+import { Sparkles, ArrowRight, Star } from "lucide-react"
 import { SearchBar } from "@/components/shared/SearchBar"
 import { Button } from "@/components/ui/button"
 
@@ -16,10 +15,27 @@ const item = {
 
 export function HeroSection() {
   return (
-    <section className="relative flex min-h-[92svh] items-center overflow-hidden pt-24 pb-16">
-      <StarField density={110} />
+    <section className="relative min-h-[92svh] flex items-center overflow-hidden pt-24 pb-16">
+      {/* Decorative floating elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-1/4 left-[10%] w-32 h-32 bg-gradient-to-br from-blue-200 to-blue-300 rounded-full opacity-30 blur-2xl"
+        />
+        <motion.div
+          animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute bottom-1/4 right-[15%] w-40 h-40 bg-gradient-to-br from-green-200 to-emerald-300 rounded-full opacity-25 blur-2xl"
+        />
+        <motion.div
+          animate={{ y: [0, -15, 0], x: [0, 10, 0] }}
+          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-1/2 right-[25%] w-24 h-24 bg-gradient-to-br from-blue-300 to-blue-400 rounded-full opacity-20 blur-xl"
+        />
+      </div>
 
-      <div className="relative mx-auto flex max-w-5xl flex-col items-center px-4 text-center sm:px-6">
+      <div className="relative mx-auto max-w-5xl flex flex-col items-center px-4 sm:px-6 text-center">
         <motion.div
           variants={container}
           initial="hidden"
@@ -28,61 +44,83 @@ export function HeroSection() {
         >
           <motion.span
             variants={item}
-            className="glass mb-6 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs tracking-wide text-gold/90"
+            className="clay inline-flex items-center gap-2 mb-6 px-5 py-2.5 text-sm font-medium text-blue-600"
           >
-            <Moon className="h-3.5 w-3.5 animate-float" strokeWidth={1.5} />
-            Angel Numbers &middot; Numerology &middot; Astrology
+            <Star className="h-4 w-4 text-green-500 animate-pulse-soft" fill="currentColor" />
+            Angel Numbers · Numerology · Astrology
           </motion.span>
 
           <motion.h1
             variants={item}
-            className="text-balance font-display text-5xl leading-[1.08] text-ethereal sm:text-6xl md:text-7xl"
+            className="font-display text-5xl sm:text-6xl md:text-7xl leading-[1.1] text-blue-600 text-balance"
           >
-            The universe is <span className="text-gradient-gold">speaking</span>.
+            Unlock the Magic of <span className="text-gradient-blue">Angel Numbers</span>
             <br />
-            Learn to read the signs.
+            and Discover Your Life's Path
           </motion.h1>
 
           <motion.p
             variants={item}
-            className="mt-6 max-w-xl text-balance text-base leading-relaxed text-ethereal/60 sm:text-lg"
+            className="mt-6 max-w-2xl text-balance text-lg leading-relaxed text-gray-600"
           >
-            Decode the angel numbers following you, calculate your life path,
-            and check today's horoscope &mdash; all in one place built for the
-            curious and the committed alike.
+            Welcome to AngelNumberrs — your path to clarity and purpose through the power of numerology. 
+            With over 10+ years of experience, I help people discover their life's unique blueprint 
+            and transform challenges into strengths.
           </motion.p>
 
           <motion.div variants={item} className="mt-10 w-full max-w-lg">
             <SearchBar />
           </motion.div>
 
-          <motion.div variants={item} className="mt-6 flex flex-wrap items-center justify-center gap-4">
+          <motion.div variants={item} className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Button
               asChild
               size="lg"
-              className="bg-gold text-primary-foreground hover:bg-gold-light glow-gold"
+              className="clay-button text-white font-semibold px-6 hover:scale-105 transition-transform"
             >
               <Link to="/angel-numbers">
-                Discover Your Angel Number
-                <ArrowRight className="h-4 w-4" />
+                Discover Your Number
+                <ArrowRight className="h-4 w-4 ml-2" />
               </Link>
             </Button>
             <Button
               asChild
               size="lg"
               variant="outline"
-              className="border-white/15 bg-white/[0.02] text-ethereal/80 hover:bg-white/5 hover:text-gold"
+              className="clay clay-hover bg-white text-blue-600 border-none font-semibold px-6"
             >
               <Link to="/numerology">
-                <Sparkles className="h-4 w-4" />
-                Try Numerology Tools
+                <Sparkles className="h-4 w-4 mr-2" />
+                Try Free Tools
               </Link>
             </Button>
           </motion.div>
+
+          {/* Trust indicators */}
+          <motion.div
+            variants={item}
+            className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500"
+          >
+            <div className="flex items-center gap-2">
+              <div className="flex -space-x-2">
+                {[1, 2, 3, 4].map((i) => (
+                  <div
+                    key={i}
+                    className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-300 to-blue-500 border-2 border-white"
+                  />
+                ))}
+              </div>
+              <span>10,000+ readings</span>
+            </div>
+            <div className="flex items-center gap-1">
+              {[1, 2, 3, 4, 5].map((i) => (
+                <Star key={i} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
+              ))}
+              <span className="ml-1">4.9/5 rating</span>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
-
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-midnight to-transparent" />
     </section>
   )
 }

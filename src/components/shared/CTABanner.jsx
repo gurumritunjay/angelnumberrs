@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
-import { Moon, ArrowRight } from "lucide-react"
+import { Star, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function CTABanner({
@@ -17,27 +17,35 @@ export function CTABanner({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`relative overflow-hidden rounded-3xl border border-gold/20 bg-gradient-to-br from-mystic-purple-deep/40 via-midnight to-midnight-deep p-10 text-center sm:p-14 ${className}`}
+      className={`relative overflow-hidden clay clay-hover bg-gradient-to-br from-blue-50 via-white to-blue-50 p-10 text-center sm:p-14 ${className}`}
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_0%,theme(colors.gold/12),transparent)]" />
-      <Moon className="relative mx-auto h-8 w-8 text-gold animate-float" strokeWidth={1.5} />
-      <p className="relative mt-4 text-xs tracking-[0.25em] text-gold/80 uppercase">{eyebrow}</p>
-      <h3 className="relative mx-auto mt-3 max-w-xl font-display text-3xl text-ethereal sm:text-4xl">
-        {title}
-      </h3>
-      <p className="relative mx-auto mt-4 max-w-lg text-sm leading-relaxed text-ethereal/60">
-        {description}
-      </p>
-      <Button
-        asChild
-        size="lg"
-        className="relative mt-8 bg-gold text-primary-foreground hover:bg-gold-light glow-gold"
-      >
-        <Link to={to}>
-          {ctaLabel}
-          <ArrowRight className="h-4 w-4" />
-        </Link>
-      </Button>
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute top-0 left-1/4 w-32 h-32 bg-blue-200 rounded-full opacity-30 blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-40 h-40 bg-green-200 rounded-full opacity-20 blur-3xl" />
+      </div>
+      
+      <div className="relative">
+        <div className="clay inline-flex p-3 mb-4 bg-gradient-to-br from-blue-400 to-blue-600">
+          <Star className="h-6 w-6 text-white" fill="currentColor" strokeWidth={2} />
+        </div>
+        <p className="text-sm font-semibold text-blue-600 uppercase tracking-wider">{eyebrow}</p>
+        <h3 className="mx-auto mt-4 max-w-xl font-display text-3xl sm:text-4xl text-blue-600 font-bold">
+          {title}
+        </h3>
+        <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-gray-600">
+          {description}
+        </p>
+        <Button
+          asChild
+          size="lg"
+          className="mt-8 clay-button text-white font-semibold"
+        >
+          <Link to={to}>
+            {ctaLabel}
+            <ArrowRight className="h-4 w-4 ml-2" />
+          </Link>
+        </Button>
+      </div>
     </motion.div>
   )
 }

@@ -1,10 +1,22 @@
 import { motion } from "framer-motion"
-import { StarField } from "@/components/shared/StarField"
 
 export function PageHero({ eyebrow, title, description, children }) {
   return (
     <section className="relative overflow-hidden pt-36 pb-16 sm:pt-40">
-      <StarField density={50} />
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <motion.div
+          animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-20 left-[15%] w-40 h-40 bg-gradient-to-br from-blue-200 to-blue-300 rounded-full opacity-20 blur-3xl"
+        />
+        <motion.div
+          animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-32 right-[20%] w-32 h-32 bg-gradient-to-br from-green-200 to-emerald-300 rounded-full opacity-15 blur-2xl"
+        />
+      </div>
+
       <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -12,13 +24,15 @@ export function PageHero({ eyebrow, title, description, children }) {
           transition={{ duration: 0.55, ease: "easeOut" }}
         >
           {eyebrow && (
-            <p className="text-xs tracking-[0.25em] text-gold/80 uppercase">{eyebrow}</p>
+            <div className="inline-flex clay px-4 py-2 mb-4">
+              <p className="text-sm font-semibold text-blue-600 uppercase tracking-wider">{eyebrow}</p>
+            </div>
           )}
-          <h1 className="mt-3 text-balance font-display text-4xl text-ethereal sm:text-5xl">
+          <h1 className="mt-3 text-balance font-display text-4xl sm:text-5xl text-blue-600 font-bold">
             {title}
           </h1>
           {description && (
-            <p className="mx-auto mt-4 max-w-xl text-balance text-sm leading-relaxed text-ethereal/60 sm:text-base">
+            <p className="mx-auto mt-6 max-w-2xl text-balance text-base sm:text-lg leading-relaxed text-gray-600">
               {description}
             </p>
           )}

@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom"
 import { PageWrapper } from "@/components/layout/PageWrapper"
+import { WhatsAppButton } from "@/components/shared/WhatsAppButton"
 import Home from "@/pages/Home"
 import AngelNumbersDirectory from "@/pages/AngelNumbersDirectory"
 import AngelNumberDetail from "@/pages/AngelNumberDetail"
@@ -22,6 +23,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <WhatsAppButton />
     </PageWrapper>
   )
 }
